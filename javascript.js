@@ -88,7 +88,11 @@ var restRooms = [
     apiKey = 'AIzaSyBvScptNdp_4sLBx64nk2_XB-Xpdr570tk';
     
     apiUrl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + pos.lat + ',' + pos.lng + '&radius=8500&type=gas_station&key='+ apiKey;
-  $.getJSON(apiUrl, function(data){
+  $.ajax({
+    url: apiUrl,
+    method: "GET",
+    headers:{'Access-Control-Allow-Origin': 'https://kgodwin88.github.io/pinch/'}, 
+  }).then(function(data){
     console.log(data)
   })
   

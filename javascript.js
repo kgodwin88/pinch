@@ -88,11 +88,7 @@ var restRooms = [
     apiKey = 'AIzaSyBvScptNdp_4sLBx64nk2_XB-Xpdr570tk';
     
     apiUrl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + pos.lat + ',' + pos.lng + '&radius=8500&type=gas_station&key='+ apiKey;
-  $.ajax({
-    url: apiUrl,
-  
-    method: "GET"
-  }).then(function(data){
+  $.getJSON(apiUrl, function(data){
     console.log(data)
   })
   
